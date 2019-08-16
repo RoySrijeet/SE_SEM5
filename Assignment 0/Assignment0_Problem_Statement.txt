@@ -1,0 +1,14 @@
+Online Event Management and Planner
+
+Note: Some of the desired requirements (read wish list of the customer) are mentioned for the following Case Study. Students are free to use these and/or add and redefine these depending on their own assessment, thoughts and brain-storming outputs (!) to come up with a Use Case Diagram showing the Use Cases and Actors clearly.
+
+State your assumptions clearly. 
+
+Possible user requirements that may be covered:
+Functional Requirements
+•	User can choose different packages for the events like Marriage reception, Anniversary, Birthday etc.
+•	User can choose caterer from a list of caterers according to rating, specialty and so on.
+•	User can choose or specify food items for the event.
+•	User can choose from alternate decoration plans
+•	...
+Non Functional Requirements - upto the developer
