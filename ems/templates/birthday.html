@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wedding Ceremonies</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Event Management Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css'%}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/birthday.css'%}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css'%}">
+</head>
+<body>
+<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a href="index.html">Event</a></div>
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About us</a></li>
+									<li><a href="#">Services</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
+							<div class="header_login ml-auto">
+								<a href="login.html">
+									Login
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+   <div class="services" id="services">
+        <div class="background_image" style="background-image:url({% static 'images/birthday_bg.jpg'%})"></div>
+	
+        <div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="birthday_title">Birthday Parties</div>
+				</div>
+			</div>
+			<div class="row service_row">
+				<div class="col">
+					<div class="service_container item_grid">
+
+						<div class="service item">
+							<div class="service_image">
+								<a href="wedding-banquets.html">
+									<img class="fade" src="{% static 'images/birthday_services/birthday_hall.jpg'%}" alt="Banquets">
+									<div class="service_title">Halls</div>
+								</a>
+							</div>
+							<div class="service_content">
+								
+							</div>
+						</div>
+
+						<div class="service item">
+							<div class="service_image">
+								<a href="wedding-caterers.html">
+									<img class="fade" src="{% static 'images/caterer.jpg'%}" alt="Caterers">
+									 <div class="service_title">Caterers</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="service item">
+							<div class="service_image">
+								<a href="wedding-decorators.html">
+									<img class="fade" src="{% static 'images/decorator.jpg'%}" alt="Decorators">
+									 <div class="service_title">Decorators</div>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+				<div>
+			</div>   
+			<div class="row service_row">
+				<div class="col">
+					<div class="service_container item_grid">
+						<div class="service item">
+							<div class="service_image">
+								<a href="wedding-photography.html">
+									<img class="fade" src="{% static 'images/studio.jpg'%}" alt="Studio">
+									 <div class="service_title">Photography</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="service item">
+							<div class="service_image">
+								<a href="wedding-planners.html">
+									<img class="fade" src="{% static 'images/planner.jpg'%}" alt="Planner">
+									 <div class="service_title">Planner</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+   </div>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js'%}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js'%}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js'%}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js'%}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js'%}"></script>
+<script src="{% static 'plugins/easing/easing.js'%}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
+</body>
+</html>

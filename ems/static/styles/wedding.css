@@ -1,0 +1,369 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+4. Services
+
+******************************/
+
+/***********
+1. Fonts
+***********/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Oswald:400,500,600,700');
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+*
+{
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	background: #FFFFFF;
+	color: #a5a5a5;
+}
+div
+{
+	display: block;
+	position: relative;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul
+{
+	list-style: none;
+	margin-bottom: 0px;
+}
+p
+{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.9285;
+	font-weight: 400;
+	color: #72728c;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a
+{
+	display: inline;
+	position: relative;
+	color: inherit;
+	border-bottom: solid 1px #ffa07f;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+p:last-of-type
+{
+	margin-bottom: 0;
+}
+a, a:hover, a:visited, a:active, a:link
+{
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a:active
+{
+	position: relative;
+	color: #FF6347;
+}
+p a:hover
+{
+	color: #FFFFFF;
+	background: #ffa07f;
+}
+p a:hover::after
+{
+	opacity: 0.2;
+}
+::selection
+{
+	
+}
+p::selection
+{
+	
+}
+h1{font-size: 72px;}
+h2{font-size: 48px;}
+h3{font-size: 36px;}
+h4{font-size: 24px;}
+h5{font-size: 18px;}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection, 
+h6::selection
+{
+	
+}
+.form-control
+{
+	color: #db5246;
+}
+section
+{
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+}
+.clear
+{
+	clear: both;
+}
+.clearfix::before, .clearfix::after
+{
+	content: "";
+	display: table;
+}
+.clearfix::after
+{
+	clear: both;
+}
+.clearfix
+{
+	zoom: 1;
+}
+.float_left
+{
+	float: left;
+}
+.float_right
+{
+	float: right;
+}
+
+.background_image
+{
+	min-height: 100%;
+	min-width: 1024px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.nopadding
+{
+	padding: 0px;
+}
+
+/*********************************
+3. Header
+*********************************/
+
+.header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.header_content
+{
+	width: 100%;
+	height: 148px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.header.scrolled
+{
+	background: rgba(24,24,24,0.6);
+}
+.header.scrolled .header_content
+{
+	height: 90px;
+}
+.header_content_inner
+{
+	width: 100%;
+}
+.logo a
+{
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 0.75;
+}
+.main_nav
+{
+	margin-left: 242px;
+}
+.main_nav ul li
+{
+	position: relative;
+}
+.main_nav ul li::after
+{
+	display: block;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	top: -104px;
+	width: 2px;
+	height: 0px;
+	background: #FFFFFF;
+	content: '';
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.main_nav ul li.active::after,
+.main_nav ul li:hover::after
+{
+	height: 100px;
+	visibility: visible;
+	opacity: 1;
+}
+.main_nav ul li:not(:last-child)
+{
+	margin-right: 54px;
+}
+.main_nav ul li a
+{
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	color: #FFFFFF;
+	white-space: nowrap;
+}
+.header_login
+{
+	margin-right: 60px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+/*********************************
+4. Services
+*********************************/
+.wedding_title
+{
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    font-weight: 500px ;
+    color:#e5e4e2;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.26);
+    margin-top: 50px;
+    padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 25px;
+}
+.services
+{
+	width: 100%;
+	padding-top: 125px;
+}
+
+.service_row
+{
+	margin-top: 50px;
+}
+.service_image
+{
+	width: 100%;
+    height: auto;
+    border-radius: 15px 50px;
+}
+.service_image img
+{
+	max-width: 100%;
+    height: auto;
+    border-radius: 15px 50px;
+}
+.service_container
+{
+	width: calc(100% + 30px);
+	left:-15px;
+}
+.service
+{
+	width: calc(100% / 3);
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+}
+
+.service_title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	font-weight: 300;
+    color: #e5e4e2;
+    background: rgba(20, 19, 19, 0.7);
+    padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px; 
+  }
+.fade
+{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+.fade:hover
+{
+    opacity: 0.8;
+}
