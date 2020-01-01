@@ -1,103 +1,88 @@
 from django.db import models
+from django.utils import timezone
 #RAW SKELETON FROM DATA DICTIONARY
 #NO RELATIONS ESTABLISHED
 # Create your models here.
+
 class Caterer(models.Model):
     cat_id  = models.AutoField(primary_key = True)
     name = models.CharField(max_length = 20)
-    location = models.CharField(max_length = 20)
-    manager_id = models.AutoField(primary_key = False)
-    #manager_id = models.InteherField(max_length=10)
-    cost_p = models.FloatField(null=True)
+    cost_p = models.FloatField()
     rating = models.FloatField(null = True)
+    experience=models.TextField()
 
 class Decorator(models.Model):
     dec_id = models.AutoField(primary_key = True)
     name = models.CharField(max_length=20)
-    ofc_address = models.CharField(max_length=20)
-    manager_id = models.AutoField(primary_key=False)
-    avg_rate = models.FloatField(null=True)
+    cost_p = models.FloatField()
     rating = models.FloatField(null=True)
+    experience = models.TextField()
 
 class Hall(models.Model):
     hall_id = models.AutoField(primary_key  = True)
     name =  models.CharField(max_length = 20 )
     location = models.CharField(max_length = 20 )
-    area = models.FloatField()
     capacity = models.IntegerField()
-    manager_id= models.AutoField(primary_key=False)
-    rent = models.FloatField(null=True)
+    cost_p = models.FloatField()
     rating = models.FloatField(null=True)
+    experience = models.TextField()
 
 class Studio(models.Model):
     st_id = models.AutoField(primary_key  = True)
     name = models.CharField(max_length=20)
-    st_addr = models.CharField(max_length=20)
-    manager_id = models.AutoField(primary_key=False)
-    avg_rate = models.FloatField(null=True)
+    cost_p = models.FloatField()
     rating = models.FloatField(null=True)
+    experience = models.TextField()
 
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
+class Customer(models.Model):
+   # user_id = models.AutoField(primary_key=True)
+    user_id = models.CharField(primary_key=True,max_length = 100)
+
     f_name = models.CharField(max_length=20)
     l_name = models.CharField(max_length=20)
-    acc_type = models.IntegerField()
-    email = models.CharField(max_length=20)
-    city = models.CharField(max_length=10,null = True)
-    phone = models.CharField(max_length=10,null = True)
+    organisation = models.CharField(max_length=10, null=True)
+    email = models.EmailField()
+    password = models.CharField(max_length=15,default = 'son')
+    phone = models.CharField(max_length=10)
 
-class AccType(models.Model):
-    type_id = models.AutoField(primary_key=True)
-    type_name = models.CharField(max_length=10)
+class Planner(models.Model):
+    planner_id= models.AutoField(primary_key=True)
+    plan_brand= models.CharField(max_length=20)
+    plan_name= models.CharField(max_length=20)
+    message= models.TextField()
 
-class LoginInfo(models.Model):
-    user_id = models.IntegerField(primary_key=True)
-    ip_addr = models.CharField(max_length= 10)
- #   login_time =
-  #  logout_time =
-
+'''
 class EventDetails(models.Model):
     event_id = models.AutoField(primary_key=True)
-    cus_id =models.IntegerField()
-    #date
-    hall_id = models.IntegerField(null=True)
-    studio_id = models.IntegerField(null=True)
-    caterer_id = models.IntegerField(null=True)
-    decor_id = models.IntegerField(null=True)
-    planner_id = models.IntegerField(null=True)
-
-class PlanEvent(models.Model):
-    event_id = models.IntegerField(primary_key=True)
-    planner_id = models.IntegerField(primary_key=True)
-    manager_id = models.IntegerField(primary_key=True)
-
-class CustomerBill(models.Model):
-    bill_no = models.AutoField(primary_key=True)
-    event_id = models.IntegerField()
-    hall_charge = models.FloatField(null=True)
-    studio_charge = models.FloatField(null=True)
-    caterer_charge = models.FloatField(null=True)
-    decor_charge = models.FloatField(null=True)
-    planner_charge = models.FloatField(null=True)
-    total_charge = models.FloatField()
-    paid = models.FloatField(null=True)
-    #latepayday
-    amount_due = models.FloatField(null=True)
-    mode_of_pay = models.IntegerField(null=True)
-
-class VendorBill(models.Model):
-    event_id = models.IntegerField(primary_key=True)
-    vendor_id = models.IntegerField(primary_key=True)
-    amount = models.FloatField()
-    paid = models.FloatField()
-    #lstpayday
-    due = models.FloatField(null=True)
-    mode =models.IntegerField(null=True)
+    cus_id = models.ForeignKey(Customer,on_delete = models.CASCADE)
+    hall_id = models.ForeignKey(Hall,on_delete = models.CASCADE)
+    studio_id = models.ForeignKey(Studio,on_delete = models.CASCADE)
+    caterer_id = models.ForeignKey(Caterer,on_delete = models.CASCADE)
+    decor_id = models.ForeignKey(Decorator,on_delete = models.CASCADE)
+    planner_id = models.ForeignKey(Planner,on_delete = models.CASCADE)
+    total=models.FloatField(null=True)
+'''
+class EventDetails(models.Model):
+    email_id = models.CharField(max_length=20)
+    date = models.CharField(max_length=20)
+    time = models.CharField(max_length=5)
+    event_id = models.CharField(primary_key=True,max_length = 20)
+    cus_id = models.CharField(max_length = 20)
+    hall_id = models.CharField(max_length = 20)
+    studio_id = models.CharField(max_length = 20)
+    caterer_id = models.CharField(max_length = 20)
+    decor_id = models.CharField(max_length = 20)
+    planner_id = models.CharField(max_length = 20)
+    #total=models.FloatField(null=True)
 
 class PayMod(models.Model):
-    pay_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20)
-    bank = models.CharField(max_length=20,null =True)
-    upi = models.CharField(max_length=20,null =True)
-
+    card_number = models.CharField(primary_key=True,max_length = 20)
+    #expiration_date = models.DateTimeField()
+    cv_code = models.IntegerField()
+    card_owner = models.CharField(max_length=20)
+'''
+class EventDetails(models.Model):
+    email_id = models.CharField(max_length=20)
+    date = models.CharField(max_length=20)
+'''
 
